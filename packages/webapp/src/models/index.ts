@@ -1,1 +1,1 @@
-export * from './data.model.ts'
+export * from './data.model'

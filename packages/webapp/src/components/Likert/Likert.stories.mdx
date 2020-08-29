@@ -1,0 +1,20 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks'
+import { Likert } from './Likert.component'
+import { action } from '@storybook/addon-actions'
+
+<Meta title="Likert" component={Likert} />
+
+# Likert
+
+This is the documentation for the `Likert` used in this app, it has the params `options`, `onChange`
+
+<Canvas>
+  <Story name="Likert">
+    <Likert
+      options={['A', 'B', 'C']}
+      onClick={({ label, value }) =>
+        console.log(`Clicked on ${label} so ${value} `)
+      }
+    />
+  </Story>
+</Canvas>
