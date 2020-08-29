@@ -6,7 +6,7 @@ type Props = {
   value: string
 }
 
-const FormInput = ({ label, ...props }: Props) => {
+export const FormInput = ({ label, ...props }: Props) => {
   return (
     <div className="">
       <label>{label}</label>
@@ -14,5 +14,3 @@ const FormInput = ({ label, ...props }: Props) => {
     </div>
   )
 }
-
-export default FormInput

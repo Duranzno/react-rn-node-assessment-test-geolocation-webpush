@@ -4,8 +4,6 @@ type Props = {
   children: React.ReactNode
 }
 
-const Layout = ({ children }: Props) => {
+export const Layout = ({ children }: Props) => {
   return <div className="w-screen">{children}</div>
 }
-
-export default Layout
