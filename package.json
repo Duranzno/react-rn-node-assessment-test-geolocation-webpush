@@ -5,7 +5,11 @@
     "packages/*"
   ],
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "mobile": "yarn workspace mobile",
+    "server": "yarn workspace server",
+    "webapp": "yarn workspace webapp"
+  },
   "devDependencies": {
     "concurrently": "^5.3.0"
   },

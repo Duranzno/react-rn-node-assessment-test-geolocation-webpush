@@ -1,4 +1,5 @@
 {
+  "extends": "../tsconfig.json",
   "compilerOptions": {
     "module": "commonjs",
     "esModuleInterop": true,
@@ -9,14 +10,28 @@
     "outDir": "dist",
     "baseUrl": ".",
     "paths": {
-      "*": ["node_modules/*"]
+      "*": [
+        "node_modules/*"
+      ]
     },
-    "typeRoots": ["node_modules/@types", "index.d.ts"],
+    "typeRoots": [
+      "node_modules/@types",
+      "index.d.ts"
+    ],
     "strict": true,
     "strictNullChecks": true,
     "strictFunctionTypes": true,
     // "strictBindCallApply": true,
-    "lib": ["es6"]
+    "lib": [
+      "es6"
+    ]
   },
-  "include": ["src/**/*"]
+  "references": [
+    {
+      "path": "../common"
+    }
+  ],
+  "include": [
+    "src/**/*"
+  ]
 }
