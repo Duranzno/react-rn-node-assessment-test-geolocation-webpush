@@ -1,11 +1,12 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { SafeAreaView, Text } from 'react-native';
 import { appStyles } from 'commons/styles';
 import { detailStyles } from 'screens/detail/styles';
 
-const HomeScreenController = ({ navigation }: any) => {
-  useEffect(() => {}, []);
-
+import { AppStackParamList } from 'screens/AppStackParamList.model';
+import { StackScreenProps } from '@react-navigation/stack';
+type Props = StackScreenProps<AppStackParamList, 'Home'>;
+export const HomeScreen: React.FC<Props> = () => {
   return (
     <SafeAreaView style={appStyles.safeArea}>
       <Text style={[detailStyles.cardText, detailStyles.title]}>
@@ -14,5 +15,3 @@ const HomeScreenController = ({ navigation }: any) => {
     </SafeAreaView>
   );
 };
-
-export default HomeScreenController;

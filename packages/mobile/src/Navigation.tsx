@@ -1,16 +1,22 @@
 import { createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
-import HomeScreenController from 'screens/home/HomeController';
-import DetailScreenController from 'screens/detail/DetailController';
-
-export const navigationRef: any = React.createRef();
-export function navigate(parameters: { name: any; params: any }) {
+import { DetailScreen, AppStackParamList, HomeScreen } from 'screens';
+import { NavigationContainerRef } from '@react-navigation/native';
+import { SosafeData } from 'common';
+export const navigationRef = React.createRef<
+  NavigationContainerRef
+>();
+export function navigate(parameters: {
+  name: string;
+  params: SosafeData;
+}): void {
   const { name, params } = parameters;
-  navigationRef.current?.navigate(name, params);
+  if (navigationRef.current !== null) {
+    navigationRef.current.navigate(name, params);
+  }
 }
-
-const AppStack = createStackNavigator();
-export const AppStackScreen: any = () => {
+const AppStack = createStackNavigator<AppStackParamList>();
+export const AppStackScreen: React.FC = () => {
   return (
     <AppStack.Navigator
       initialRouteName="Home"
@@ -23,12 +29,17 @@ export const AppStackScreen: any = () => {
     >
       <AppStack.Screen
         name="Home"
-        component={HomeScreenController}
+        component={HomeScreen}
+        options={{}}
+      />
+      <AppStack.Screen
+        name="List"
+        component={ListScreem}
         options={{}}
       />
       <AppStack.Screen
         name="Detail"
-        component={DetailScreenController}
+        component={DetailScreen}
         options={{}}
       />
     </AppStack.Navigator>
