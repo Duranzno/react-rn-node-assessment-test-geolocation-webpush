@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 describe('Home Screen', () => {
   beforeEach(async () => {
     await device.reloadReactNative();

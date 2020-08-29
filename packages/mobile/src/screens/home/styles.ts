@@ -1,7 +1,7 @@
-import {StyleSheet} from "react-native";
+import { StyleSheet } from 'react-native';
 
 export const homeStyles = StyleSheet.create({
-    cardText: {
-        fontSize: 16
-    }
+  cardText: {
+    fontSize: 16,
+  },
 });

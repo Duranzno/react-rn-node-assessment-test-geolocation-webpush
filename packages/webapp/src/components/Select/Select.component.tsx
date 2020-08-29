@@ -1,8 +1,8 @@
 import React from 'react'
 import Select from 'react-select'
 interface Props {
-  onChange: Function
-  options: string[]
+  onChange: Function;
+  options: string[];
 }
 type OptionType = { value: string; label: string }
 const parser = (data: string[]): OptionType[] =>

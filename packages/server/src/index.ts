@@ -17,4 +17,6 @@ app.post('/upload', (req, res): void => {
   res.send(payload);
 });
 
-app.listen(app.get('PORT'), (): void => console.log('Listening at ' + app.get('PORT')));
+app.listen(app.get('PORT'), (): void =>
+  console.log('Listening at ' + app.get('PORT')),
+);

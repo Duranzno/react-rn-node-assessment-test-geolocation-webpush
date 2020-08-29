@@ -1,6 +1,6 @@
-import { SosafeData } from 'models'
+import { SosafeData } from 'common'
 // import Pusher from 'pusher-js'
-import axios from 'axios'
+import axios, { AxiosResponse } from 'axios'
 // const pusherConfig = {
 //   app_id: process.env.REACT_APP_PUSHER_APP_ID,
 //   key: process.env.REACT_APP_PUSHER_KEY,
@@ -21,5 +21,5 @@ import axios from 'axios'
 //   channel.trigger(pusherConfig.event, { data })
 // })
 // }
-export const submitFormData = async (data: SosafeData) =>
+export const submitFormData = async (data: SosafeData): Promise<AxiosResponse> =>
   await axios.post(`${process.env.REACT_APP_SERVER_API}/upload`, data)

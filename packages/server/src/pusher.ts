@@ -1,7 +1,11 @@
 import Pusher from 'pusher';
-import { pusherConfig } from 'common';
+import { pusherConfig, SosafeData } from 'common';
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export function trigger(data: any, channel?: string, event?: string): void {
+export function trigger(
+  data: SosafeData,
+  channel?: string,
+  event?: string,
+): void {
   const pusher = new Pusher({
     appId: pusherConfig.appId,
     key: pusherConfig.key,
@@ -12,5 +16,9 @@ export function trigger(data: any, channel?: string, event?: string): void {
   });
 
   console.log(pusher);
-  pusher.trigger(channel || pusherConfig.channel, event || pusherConfig.event, data);
+  pusher.trigger(
+    channel || pusherConfig.channel,
+    event || pusherConfig.event,
+    data,
+  );
 }

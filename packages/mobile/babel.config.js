@@ -1,15 +1,23 @@
 module.exports = {
-    plugins: [
-        ['module-resolver',
-            {
-                root: ['./src'],
-                extensions: ['.ios.js', '.android.js', '.js', '.ts', '.tsx', '.json'],
-                alias: {
-                    "tests": ["./tests/"],
-                    "@components": "./src/components",
-                }
-            }
-        ]
+  plugins: [
+    [
+      'module-resolver',
+      {
+        root: ['./src'],
+        extensions: [
+          '.ios.js',
+          '.android.js',
+          '.js',
+          '.ts',
+          '.tsx',
+          '.json',
+        ],
+        alias: {
+          tests: ['./tests/'],
+          '@components': './src/components',
+        },
+      },
     ],
-    presets: ['module:metro-react-native-babel-preset'],
+  ],
+  presets: ['module:metro-react-native-babel-preset'],
 };

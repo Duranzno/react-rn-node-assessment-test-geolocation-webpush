@@ -1,7 +1,7 @@
 import React from 'react'
 interface Props {
-  options: string[]
-  onClick: Function
+  options: string[];
+  onClick: Function;
 }
 export const Likert: React.SFC<Props> = ({ onClick, options }) => {
   return (
@@ -29,9 +29,9 @@ const scale = [
   'Strongly Agree',
 ]
 export const LikertRow: React.SFC<{
-  option: string
-  onChange: Function
-  value: string
+  option: string;
+  onChange: Function;
+  value: string;
 }> = ({ option, onChange, value }) => (
   <div>
     <p>{option}</p>
@@ -46,9 +46,9 @@ export const LikertRow: React.SFC<{
   </div>
 )
 const LikertUnit: React.SFC<{
-  value: string
-  label: string
-  onClick: Function
+  value: string;
+  label: string;
+  onClick: Function;
 }> = ({ value, label, onClick }) => (
   <div>
     <button disabled={value === label} onClick={() => onClick(label)} />
