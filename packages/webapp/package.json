@@ -1,5 +1,5 @@
 {
-  "name": "my-app",
+  "name": "webapp",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -37,6 +37,18 @@
     "typescript": "~3.7.2",
     "yup": "^0.29.1"
   },
+  "devDependencies": {
+    "@babel/core": "^7.11.4",
+    "@storybook/addon-actions": "^6.0.20",
+    "@storybook/addon-essentials": "^6.0.20",
+    "@storybook/addon-links": "^6.0.20",
+    "@storybook/node-logger": "^6.0.20",
+    "@storybook/preset-create-react-app": "^3.1.4",
+    "@storybook/react": "^6.0.20",
+    "babel-loader": "^8.1.0",
+    "cypress": "^5.0.0",
+    "react-is": "^16.13.1"
+  },
   "scripts": {
     "start": "yarn watch:css && react-scripts start",
     "build": "yarn build:css && react-scripts build",
@@ -49,8 +61,10 @@
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
   },
   "browserslist": {
     "production": [
@@ -63,17 +77,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@babel/core": "^7.11.4",
-    "@storybook/addon-actions": "^6.0.20",
-    "@storybook/addon-essentials": "^6.0.20",
-    "@storybook/addon-links": "^6.0.20",
-    "@storybook/node-logger": "^6.0.20",
-    "@storybook/preset-create-react-app": "^3.1.4",
-    "@storybook/react": "^6.0.20",
-    "babel-loader": "^8.1.0",
-    "cypress": "^5.0.0",
-    "react-is": "^16.13.1"
   }
 }

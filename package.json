@@ -1,0 +1,17 @@
+{
+  "private": true,
+  "name": "sosafe-technical-test",
+  "workspaces": [
+    "packages/*"
+  ],
+  "license": "MIT",
+  "scripts": {},
+  "devDependencies": {
+    "concurrently": "^5.3.0"
+  },
+  "author": "Alejandro Duran <aledurax@gmail.com> (https://duranzno.now.sh/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Duranzno/sosafe-technical-test"
+  }
+}
