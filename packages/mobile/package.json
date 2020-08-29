@@ -30,7 +30,8 @@
     "react-native",
     "react-native/**",
     "react-native**",
-    "@storybook/**"
+    "@storybook/**",
+    "@babel/runtime/**"
   ],
   "devDependencies": {
     "@babel/core": "^7.8.4",
