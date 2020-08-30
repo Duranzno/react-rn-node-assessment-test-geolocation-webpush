@@ -1,5 +1,5 @@
 {
-  "extends": "../tsconfig.json",
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
     "module": "commonjs",
     "esModuleInterop": true,
@@ -26,11 +26,6 @@
       "es6"
     ]
   },
-  "references": [
-    {
-      "path": "../common"
-    }
-  ],
   "include": [
     "src/**/*"
   ]

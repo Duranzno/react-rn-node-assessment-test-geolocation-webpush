@@ -1,5 +1,5 @@
 import Pusher from 'pusher';
-import { pusherConfig, SosafeData } from "sosafe-assesment-test-shared-data";
+import { pusherConfig, SosafeData } from "@sosafe-test/common";
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function trigger(
   data: SosafeData,

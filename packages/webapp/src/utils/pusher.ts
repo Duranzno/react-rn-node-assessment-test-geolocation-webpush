@@ -1,4 +1,4 @@
-import { SosafeData } from "sosafe-assesment-test-shared-data"
+import { SosafeData } from "@sosafe-test/common"
 // import Pusher from 'pusher-js'
 import axios, { AxiosResponse } from 'axios'
 // const pusherConfig = {

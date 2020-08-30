@@ -1,14 +1,7 @@
 import * as React from 'react';
-import {
-  DetailScreen,
-  AppStackParamList,
-  ListScreen,
-  SosafeData,
-} from 'screens';
+import { DetailScreen, AppStackParamList, ListScreen } from 'screens';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainerRef } from '@react-navigation/native';
-
-// import { SosafeData } from 'sosafe-assesment-test-shared-data';
 
 export const navigationRef = React.createRef<
   NavigationContainerRef

@@ -1,5 +1,5 @@
 {
-  "extends": "../tsconfig.json",
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
     /* Basic Options */
     "declaration": true,
@@ -7,7 +7,8 @@
     "sourceMap": true,
     "outDir": "dist",
     "rootDir": "src",
-    "composite": true
+    "composite": true,
+    "target": "ES5"
   },
   "include": [
     "src"

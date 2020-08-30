@@ -2,6 +2,8 @@
 #
 examples/
 docs
+dist
+tsconfig.tsbuildinfo
 # OSX
 #
 .DS_Store
