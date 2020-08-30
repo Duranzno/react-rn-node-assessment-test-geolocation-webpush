@@ -13,6 +13,7 @@ type Props = {
 
 const MapComponent =withScriptjs(withGoogleMap(({onClick}: Props)=>{
   const [marker, setMarker] = useState<LatLng>()
+  //@ts-ignore
   const onMapClick=(e)=>{
     setMarker(e.latLng)
     onClick(e.latLng.toJSON())

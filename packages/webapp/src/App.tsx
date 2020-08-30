@@ -1,7 +1,10 @@
 import React from 'react'
 
+
+
 const App: React.FC=()=>  (
-    <div className="bg-main">
+    <div className="bg-green ">
+      <button className="rounded-lg">a</button>
     </div>
   )
 
