@@ -1,14 +1,19 @@
 import { createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
-import { DetailScreen, AppStackParamList, HomeScreen } from 'screens';
+import {
+  DetailScreen,
+  AppStackParamList,
+  HomeScreen,
+  ListScreen,
+} from 'screens';
 import { NavigationContainerRef } from '@react-navigation/native';
-import { SosafeData } from 'common';
+// import { SosafeData } from 'sosafe-assesment-test-shared-data';
 export const navigationRef = React.createRef<
   NavigationContainerRef
 >();
 export function navigate(parameters: {
   name: string;
-  params: SosafeData;
+  params: { name: string };
 }): void {
   const { name, params } = parameters;
   if (navigationRef.current !== null) {
@@ -34,7 +39,7 @@ export const AppStackScreen: React.FC = () => {
       />
       <AppStack.Screen
         name="List"
-        component={ListScreem}
+        component={ListScreen}
         options={{}}
       />
       <AppStack.Screen

@@ -1,15 +1,21 @@
 {
   "private": true,
   "name": "sosafe-technical-test",
-  "workspaces": [
-    "packages/*"
-  ],
+  "workspaces": {
+    "nohoist": [
+      "**react-native-maps**"
+    ],
+      "packages": [
+      "packages/*"
+    ]
+  },
   "license": "MIT",
   "scripts": {
     "mobile": "yarn workspace mobile",
     "server": "yarn workspace server",
     "webapp": "yarn workspace webapp"
   },
+ 
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^3.10.1",
     "@typescript-eslint/parser": "^3.10.1",

@@ -6,7 +6,7 @@ import { AppStackParamList } from 'screens/AppStackParamList.model';
 import { StackScreenProps } from '@react-navigation/stack';
 
 type Props = StackScreenProps<AppStackParamList, 'List'>;
-export const DetailScreen: React.FC<Props> = ({ navigation }) => {
+export const ListScreen: React.FC<Props> = ({ navigation }) => {
   navigation.setOptions({
     headerTitle: () => <Text>{'title'}</Text>,
   });

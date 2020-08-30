@@ -4,6 +4,9 @@
         "lib": [
             "ES6"
         ],
+        "types": [
+            "jest","node"
+        ],
         "strict": true,
         "moduleResolution": "node", /* Specify module resolution strategy: 'node' (Node.js) or 'classic' (TypeScript pre-1.6). */
         "esModuleInterop": true,
