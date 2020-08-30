@@ -1,56 +1,40 @@
-//@ts-nocheck
-import React, { ReactElement } from 'react'
-import { compose, withStateHandlers } from 'recompose'
+import React, { useState } from 'react'
 import {
   withGoogleMap,
   withScriptjs,
   GoogleMap,
   Marker,
 } from 'react-google-maps'
+import { LatLng } from '@sosafe-test/common';
 
-const Map = compose(
-  withStateHandlers(
-    () => ({
-      isMarkerShown: false,
-      markerPosition: null,
-    }),
-    {
-      onMapClick: ({ isMarkerShown }) => (e): void => {
-        console.log(JSON.stringify({ isMarkerShown, e }))
-        return {
-          markerPosition: e.latLng,
-          isMarkerShown: true,
-        }
-      },
-    }
-  ),
-  withScriptjs,
-  withGoogleMap
-)((props) => (
-  <GoogleMap
+type Props = {
+  onClick: (coord: LatLng) => void;
+};
+
+const MapComponent =withScriptjs(withGoogleMap(({onClick}: Props)=>{
+  const [marker, setMarker] = useState<LatLng>()
+  const onMapClick=(e)=>{
+    setMarker(e.latLng)
+    onClick(e.latLng.toJSON())
+  }
+
+  return (
+    <GoogleMap
     defaultZoom={8}
+    center={{}}
     defaultCenter={{ lat: -34.397, lng: 150.644 }}
-    onClick={props.onMapClick}
+    onClick={onMapClick}
   >
-    {props.isMarkerShown && <Marker position={props.markerPosition} />}
+    {marker && <Marker position={marker} />}
   </GoogleMap>
-))
-
-export class MapMarker extends React.Component {
-  constructor(props) {
-    super(props)
-  }
-
-  render(): ReactElement {
-    return (
-      <div style={{ height: '100%' }}>
-        <Map
-          googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_GOOGLE_MAPS_KEY}`}
-          loadingElement={<div style={{ height: `100%` }} />}
-          containerElement={<div style={{ height: `400px` }} />}
-          mapElement={<div style={{ height: `100%` }} />}
-        />
-      </div>
-    )
-  }
-}
+  )
+}))
+export const MapMarker: React.FC<Props> = (p) => (
+  <MapComponent 
+    {...p}
+    googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_GOOGLE_MAPS_KEY}`}
+    loadingElement={ <div style={{ height: `100%` }} />}
+    containerElement={ <div style={{ height: `400px` }} />}
+    mapElement={ <div style={{ height: `100%` }} />}
+  />
+)
