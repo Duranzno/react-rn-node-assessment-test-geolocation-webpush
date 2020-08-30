@@ -5,24 +5,33 @@ import { NavigationContainer } from '@react-navigation/native';
 import { AppStackScreen, navigationRef } from 'Navigation';
 import MapView from 'react-native-maps';
 
-import tailwind from 'tailwind-rn';
 import { PusherContainer } from 'container/pusher.container';
 import {
   useChannel,
   useEvent,
 } from '@harelpls/use-pusher/react-native';
 import SplashScreen from 'react-native-splash-screen';
+import { SosafeData } from 'screens';
 
 // import {
 //   pusherConfig,
 //   SosafeData,
 // } from 'sosafe-assesment-test-shared-data';
+export const SosafeDataTemplate:SosafeData = {
+  name: 'First Piece of Data Sent',
+  filters: ['A', 'B', 'C'],
+  scores: [1, 2, 3],
+  location: {
+    latitude: 52.5200066,
+    longitude: 13.404954,
+  },
+};
 
 const App: React.FC = () => {
   // const channel = useChannel('sosafe-data-channel');
-  // const [_messages, setMessages] = useState<{ name: string }[]>([]);
+  const [_messages, setMessages] = useState([SosafeDataTemplate]);
 
-  // useEffect(() => {
+  // useEffect(()rea => {
   //   console.log(_messages);
   // }, [_messages]);
 
@@ -35,20 +44,15 @@ const App: React.FC = () => {
   useEffect(() => {
     SplashScreen.hide();
   }, []);
+  useEffect(() => {
+    // console.log(_messages);
+  }, [_messages]);
   return (
     <>
       <StatusBar barStyle="dark-content" />
-      {/* <NavigationContainer ref={navigationRef}> */}
-      {/* <AppStackScreen /> */}
-      {/* <Text>{_messages}</Text> */}
-      <View style={tailwind('pt-12 items-center')}>
-        <View style={tailwind('bg-blue-200 px-3 py-1 rounded-full')}>
-          <Text style={tailwind('text-blue-800 font-semibold')}>
-            Hello Tailwind
-          </Text>
-        </View>
-      </View>
-      {/* </NavigationContainer> */}
+      <NavigationContainer ref={navigationRef}>
+        <AppStackScreen list={_messages} />
+      </NavigationContainer>
     </>
   );
 };

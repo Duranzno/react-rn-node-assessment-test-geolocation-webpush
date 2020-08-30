@@ -1,13 +1,15 @@
-import { createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
 import {
   DetailScreen,
   AppStackParamList,
-  HomeScreen,
   ListScreen,
+  SosafeData,
 } from 'screens';
+import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainerRef } from '@react-navigation/native';
+
 // import { SosafeData } from 'sosafe-assesment-test-shared-data';
+
 export const navigationRef = React.createRef<
   NavigationContainerRef
 >();
@@ -20,11 +22,14 @@ export function navigate(parameters: {
     navigationRef.current.navigate(name, params);
   }
 }
+
 const AppStack = createStackNavigator<AppStackParamList>();
-export const AppStackScreen: React.FC = () => {
+export const AppStackScreen: React.FC<{ list: SosafeData[] }> = ({
+  list,
+}) => {
   return (
     <AppStack.Navigator
-      initialRouteName="Home"
+      initialRouteName="List"
       screenOptions={{
         headerStyle: {
           shadowOpacity: 0,
@@ -33,20 +38,13 @@ export const AppStackScreen: React.FC = () => {
       }}
     >
       <AppStack.Screen
-        name="Home"
-        component={HomeScreen}
-        options={{}}
-      />
-      <AppStack.Screen
         name="List"
-        component={ListScreen}
-        options={{}}
+        component={(p): React.ReactElement => {
+          // console.log(list);
+          return <ListScreen {...p} list={list} />;
+        }}
       />
-      <AppStack.Screen
-        name="Detail"
-        component={DetailScreen}
-        options={{}}
-      />
+      <AppStack.Screen name="Detail" component={DetailScreen} />
     </AppStack.Navigator>
   );
 };

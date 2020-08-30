@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import { SafeAreaView, Text } from 'react-native';
+import { SafeAreaView, Text, Button } from 'react-native';
 import { appStyles } from 'commons/styles';
 import { detailStyles } from 'screens/detail/styles';
 import { AppStackParamList } from 'screens/AppStackParamList.model';
@@ -34,6 +34,12 @@ export const DetailScreen: React.FC<Props> = ({ navigation }) => {
       <Text style={[detailStyles.cardText, detailStyles.title]}>
         Hello Details screen
       </Text>
+      <Button
+        onPress={(): void => {
+          navigation.goBack();
+        }}
+        title="go back"
+      />
       <MapView
         // eslint-disable-next-line react-native/no-inline-styles
         style={{ flex: 1 }}
