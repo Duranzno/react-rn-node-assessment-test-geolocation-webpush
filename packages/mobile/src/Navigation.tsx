@@ -24,9 +24,7 @@ export function navigate(parameters: {
 }
 
 const AppStack = createStackNavigator<AppStackParamList>();
-export const AppStackScreen: React.FC<{ list: SosafeData[] }> = ({
-  list,
-}) => {
+export const AppStackScreen: React.FC = () => {
   return (
     <AppStack.Navigator
       initialRouteName="List"
@@ -37,13 +35,7 @@ export const AppStackScreen: React.FC<{ list: SosafeData[] }> = ({
         headerTintColor: 'rgba(0, 0, 0, 0.88)',
       }}
     >
-      <AppStack.Screen
-        name="List"
-        component={(p): React.ReactElement => {
-          // console.log(list);
-          return <ListScreen {...p} list={list} />;
-        }}
-      />
+      <AppStack.Screen name="List" component={ListScreen} />
       <AppStack.Screen name="Detail" component={DetailScreen} />
     </AppStack.Navigator>
   );

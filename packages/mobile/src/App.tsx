@@ -5,19 +5,21 @@ import { NavigationContainer } from '@react-navigation/native';
 import { AppStackScreen, navigationRef } from 'Navigation';
 import MapView from 'react-native-maps';
 
-import { PusherContainer } from 'container/pusher.container';
+import { PusherContainer } from 'providers/Pusher.provider';
 import {
   useChannel,
   useEvent,
 } from '@harelpls/use-pusher/react-native';
 import SplashScreen from 'react-native-splash-screen';
 import { SosafeData } from 'screens';
+import { RootProvider } from 'providers/Root.provider';
+import { useAppContext } from 'providers';
 
 // import {
 //   pusherConfig,
 //   SosafeData,
 // } from 'sosafe-assesment-test-shared-data';
-export const SosafeDataTemplate:SosafeData = {
+export const SosafeDataTemplate: SosafeData = {
   name: 'First Piece of Data Sent',
   filters: ['A', 'B', 'C'],
   scores: [1, 2, 3],
@@ -28,39 +30,32 @@ export const SosafeDataTemplate:SosafeData = {
 };
 
 const App: React.FC = () => {
-  // const channel = useChannel('sosafe-data-channel');
-  const [_messages, setMessages] = useState([SosafeDataTemplate]);
-
-  // useEffect(()rea => {
-  //   console.log(_messages);
-  // }, [_messages]);
-
-  // useEvent<{ name: string }>(channel, 'sosafe-data-event', (data) => {
-  //   console.log(data);
-  //   if (data) {
-  //     setMessages((messages) => [...messages, data]);
-  //   }
-  // });
+  const { addMessage } = useAppContext();
+  const channel = useChannel('sosafe-data-channel');
+  useEvent<SosafeData>(channel, 'sosafe-data-event', (data): void => {
+    if (data) {
+      addMessage(data);
+    }
+  });
   useEffect(() => {
     SplashScreen.hide();
   }, []);
-  useEffect(() => {
-    // console.log(_messages);
-  }, [_messages]);
   return (
     <>
       <StatusBar barStyle="dark-content" />
       <NavigationContainer ref={navigationRef}>
-        <AppStackScreen list={_messages} />
+        <AppStackScreen />
       </NavigationContainer>
     </>
   );
 };
 
-export default (): ReactElement => {
+function ProviderWrapper(): React.ReactElement {
   return (
-    // <PusherContainer>
-    <App />
-    // </PusherContainer>
+    <RootProvider>
+      <App />
+    </RootProvider>
   );
-};
+}
+
+export default ProviderWrapper;

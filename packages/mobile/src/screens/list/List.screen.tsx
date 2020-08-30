@@ -7,18 +7,18 @@ import {
 } from 'screens/AppStackParamList.model';
 import { StackScreenProps } from '@react-navigation/stack';
 import tailwind from 'tailwind-rn';
+import { useAppContext } from 'providers';
 
 type Props = StackScreenProps<AppStackParamList, 'List'>;
-export const ListScreen: React.FC<Props & { list: SosafeData[] }> = ({
-  list,
-  navigation,
-}) => {
+export const ListScreen: React.FC<Props> = ({ navigation }) => {
   // navigation.setOptions({
   //   headerTitle: () => <Text>{'title'}</Text>,
   // });
+  const {
+    state: { list },
+  } = useAppContext();
   const goToDetails = (data: SosafeData): void =>
     navigation.navigate('Detail', data);
-  React.useEffect(() => console.log(list), [list]);
   return (
     <SafeAreaView style={appStyles.safeArea}>
       <View style={tailwind('pt-12 items-center')}>
