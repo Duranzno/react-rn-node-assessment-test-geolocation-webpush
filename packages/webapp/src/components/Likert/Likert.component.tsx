@@ -10,7 +10,7 @@ export const Likert: React.SFC<Props> = ({ onClick, options }) => {
         <LikertRow
           key={option}
           option={option}
-          onChange={(label: string) => {
+          onChange={(label: string): {label: string;option: string} => {
             console.log(`Change option:${option} to have ${label}`)
             onClick(label, option)
             return { label, option }
@@ -51,7 +51,7 @@ const LikertUnit: React.SFC<{
   onClick: Function;
 }> = ({ value, label, onClick }) => (
   <div>
-    <button disabled={value === label} onClick={() => onClick(label)} />
+    <button disabled={value === label} onClick={(): void => onClick(label)} />
     <label>{label}</label>
   </div>
 )

@@ -1,5 +1,5 @@
 //@ts-nocheck
-import React from 'react'
+import React, { ReactElement } from 'react'
 import { compose, withStateHandlers } from 'recompose'
 import {
   withGoogleMap,
@@ -15,7 +15,7 @@ const Map = compose(
       markerPosition: null,
     }),
     {
-      onMapClick: ({ isMarkerShown }) => (e) => {
+      onMapClick: ({ isMarkerShown }) => (e): void => {
         console.log(JSON.stringify({ isMarkerShown, e }))
         return {
           markerPosition: e.latLng,
@@ -41,7 +41,7 @@ export class MapMarker extends React.Component {
     super(props)
   }
 
-  render() {
+  render(): ReactElement {
     return (
       <div style={{ height: '100%' }}>
         <Map

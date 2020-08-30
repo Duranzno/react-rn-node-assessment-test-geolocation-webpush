@@ -12,6 +12,7 @@ This is the documentation for the `Select` used in this app, it has the params `
   <Story name="Select">
     <Selector
       onChange={(c) => {
+        console.log(c)
         action('changed', c)
       }}
       options={['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']}

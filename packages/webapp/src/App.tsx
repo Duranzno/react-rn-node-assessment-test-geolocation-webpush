@@ -1,12 +1,8 @@
 import React from 'react'
-import { Likert } from 'components'
 
-function App() {
-  return (
+const App: React.FC=()=>  (
     <div className="bg-main">
-      <Likert />
     </div>
   )
-}
 
 export default App

@@ -1,1 +1,1 @@
-export * from './pusher.ts'
+export * from './pusher'
