@@ -8,14 +8,17 @@ import { action } from '@storybook/addon-actions'
 
 This is the documentation for the `Select` used in this app, it has the params `options`, `onChange`
 
+export const Template = (args) => <Selector onChange={(v)=>action("changed")}{...args } />
+
+
 <Canvas>
-  <Story name="Select">
-    <Selector
-      onChange={(c) => {
-        console.log(c)
-        action('changed', c)
-      }}
-      options={['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']}
-    />
+  <Story 
+    name="Select" 
+    height="250px"
+    args={{
+      onChange: { action: 'clicked' },
+      options:['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']
+    }}>
+    {Template.bind({})}
   </Story>
 </Canvas>

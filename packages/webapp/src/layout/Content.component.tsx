@@ -1,10 +1,6 @@
 import React from 'react'
 
-type Props = {
-  children: React.ReactNode;
-}
-
-export const Content = ({ children }: Props) => {
+export const Content: React.FC = ({ children }) => {
   return (
     <div className="sm:px-3 md:px-4 lg:px-12 xl:px-16 pt-10">{children}</div>
   )
