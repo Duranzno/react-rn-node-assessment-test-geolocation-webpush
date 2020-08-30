@@ -16,6 +16,4 @@ export const Template = (args) => (
   <Story name="Button/Normal" args={{disabled: false,children:"Next Step", onClick: action("clicked on normal")}}>
     {Template.bind({})}
   </Story>
-  <Story name="Button/Disabled" args={{disabled: true,children:"Next Step" , onClick: action("clicked on disabled")}}>{Template.bind({})}</Story>
-  <Story name="Button/Submit" args={{disabled: true,children:"Submit", onClick: action("clicked on submit")}}>{Template.bind({})}</Story>
 </Canvas>

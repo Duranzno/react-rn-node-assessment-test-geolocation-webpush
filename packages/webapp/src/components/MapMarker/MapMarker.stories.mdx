@@ -4,12 +4,17 @@ import { action } from '@storybook/addon-actions'
 
 <Meta title="Steps/MapMarker" component={MapMarker} />
 
+export const Template= (args) => (<MapMarker {...args }/>)
+
+
 # MapMarker
 
 This is the documentation for the `MapMarker` used in this app, it has the params `options`, `onChange`
 
 <Canvas>
-  <Story name="MapMarker">
-    <MapMarker onClick={console.log} />
+  <Story name="MapMarker" args={{
+    onClick:action("selected latlng")
+  }}>
+    {Template.bind({})}
   </Story>
 </Canvas>

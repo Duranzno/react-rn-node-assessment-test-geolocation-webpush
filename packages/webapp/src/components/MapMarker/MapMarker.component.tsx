@@ -22,8 +22,7 @@ const MapComponent =withScriptjs(withGoogleMap(({onClick}: Props)=>{
   return (
     <GoogleMap
     defaultZoom={8}
-    center={{}}
-    defaultCenter={{ lat: -34.397, lng: 150.644 }}
+    defaultCenter={{ lat: -33.4489, lng: -70.6693}}
     onClick={onMapClick}
   >
     {marker && <Marker position={marker} />}

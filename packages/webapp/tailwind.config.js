@@ -81,6 +81,7 @@ module.exports = {
       default: '0.25rem',
       md: '0.375rem',
       lg: '0.5rem',
+      xl: '0.75rem',
       full: '9999px',
     },
     borderWidth: {
@@ -191,6 +192,9 @@ module.exports = {
       auto: 'auto',
       ...theme('spacing'),
       full: '100%',
+      half: '50vh',
+      '3/4': '75vh',
+      "semi":"90vh",
       screen: '100vh',
     }),
     inset: {
@@ -234,6 +238,9 @@ module.exports = {
     maxHeight: {
       full: '100%',
       screen: '100vh',
+      half: '50vh',
+      '3/4': '75vh',
+      "semi":"90vh",
     },
     maxWidth: (theme, { breakpoints }) => ({
       none: 'none',
@@ -248,15 +255,25 @@ module.exports = {
       '5xl': '64rem',
       '6xl': '72rem',
       full: '100%',
+      half: '50vw',
+      '3/4': '75vw',
+      "semi":"90vw",
       ...breakpoints(theme('screens')),
     }),
     minHeight: {
       0: '0',
       full: '100%',
+      half:'50vh',
+      '3/4': '75vh',
+      "semi":"90vh",
       screen: '100vh',
     },
     minWidth: {
       0: '0',
+      half: '50vw',
+      '3/4': '75vw',
+      "semi":"90vw",
+
       full: '100%',
     },
     objectPosition: {

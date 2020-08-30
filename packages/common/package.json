@@ -1,6 +1,6 @@
 {
   "name": "@sosafe-test/common",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "license": "MIT",
   "private": "true",
   "main": "dist/index.js",

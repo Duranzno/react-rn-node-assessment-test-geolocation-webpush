@@ -6,17 +6,20 @@ export type Point = {
   x: number;
   y: number;
 };
-
+export type Score = {
+  question:string,
+  answer:string,
+}
 export interface SosafeData {
   name: string;
   filters: string[];
-  scores: number[];
+  scores: Score[];
   location: LatLng;
 }
 export const SosafeDataTemplate: SosafeData= {
   name: "First Piece of Data Sent",
-  filters: ["A","B","C"],
-  scores:[1,2,3],
+  filters: ["A"],
+  scores:[{answer:"Good",question:"A"}],
   location:{
     latitude: 52.5200066, longitude: 13.404954
   }
