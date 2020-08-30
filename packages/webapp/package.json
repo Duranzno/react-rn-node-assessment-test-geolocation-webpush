@@ -19,6 +19,7 @@
     "@types/yup": "^0.29.3",
     "autoprefixer": "^9.8.6",
     "axios": "^0.20.0",
+    "classnames": "^2.2.6",
     "eslint-plugin-react": "^7.20.0",
     "formik": "^2.1.5",
     "google-map-react": "^2.0.8",
@@ -55,6 +56,7 @@
     "@storybook/node-logger": "^6.0.20",
     "@storybook/preset-create-react-app": "^3.1.4",
     "@storybook/react": "^6.0.20",
+    "@types/classnames": "^2.2.10",
     "@types/google-map-react": "^1.1.8",
     "@types/googlemaps": "^3.39.13",
     "@types/react-leaflet": "^2.5.2",
@@ -67,8 +69,8 @@
     "tailwind.macro": "^0.5.10"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "yarn watch:css && react-scripts start",
+    "build": "yarn build:css && &react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "build:css": "postcss src/styles/tailwind.css -o src/styles/main.css",

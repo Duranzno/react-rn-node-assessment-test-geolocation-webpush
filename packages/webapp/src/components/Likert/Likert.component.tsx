@@ -1,4 +1,6 @@
 import React from 'react'
+// import cx from 'classnames'
+import { LikertRow } from "./LikertRow.component"
 interface Props {
   options: string[];
   onClick: Function;
@@ -6,52 +8,16 @@ interface Props {
 export const Likert: React.SFC<Props> = ({ onClick, options }) => {
   return (
     <div>
-      {options.map((option) => (
+      {options.map((option,index) => (
         <LikertRow
           key={option}
-          option={option}
-          onChange={(label: string): {label: string;option: string} => {
-            console.log(`Change option:${option} to have ${label}`)
+          option={`${index+1}. ${option}`}
+          onChange={(label: string): void => {
             onClick(label, option)
-            return { label, option }
           }}
-          value=""
+          value=" "
         />
       ))}
     </div>
   )
 }
-const scale = [
-  'Strongly Disagree',
-  'Disagree',
-  'Undecided',
-  'Agree',
-  'Strongly Agree',
-]
-export const LikertRow: React.SFC<{
-  option: string;
-  onChange: Function;
-  value: string;
-}> = ({ option, onChange, value }) => (
-  <div>
-    <p>{option}</p>
-    {scale.map((label) => (
-      <LikertUnit
-        key={label}
-        label={label}
-        value={value}
-        onClick={onChange}
-      ></LikertUnit>
-    ))}
-  </div>
-)
-const LikertUnit: React.SFC<{
-  value: string;
-  label: string;
-  onClick: Function;
-}> = ({ value, label, onClick }) => (
-  <div>
-    <button disabled={value === label} onClick={(): void => onClick(label)} />
-    <label>{label}</label>
-  </div>
-)

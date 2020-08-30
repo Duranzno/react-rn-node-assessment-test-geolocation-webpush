@@ -1,0 +1,21 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks'
+import { Button } from './Button.component'
+import { action } from '@storybook/addon-actions'
+
+<Meta title="Common/Button" component={Button} />
+
+# Button
+
+This is the documentation for the `Select` used in this app, it has the params `options`, `onChange`
+
+export const Template = (args) => (
+  <Button  {...args }/>
+)
+
+<Canvas>
+  <Story name="Button/Normal" args={{disabled: false,children:"Next Step", onClick: action("clicked on normal")}}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Button/Disabled" args={{disabled: true,children:"Next Step" , onClick: action("clicked on disabled")}}>{Template.bind({})}</Story>
+  <Story name="Button/Submit" args={{disabled: true,children:"Submit", onClick: action("clicked on submit")}}>{Template.bind({})}</Story>
+</Canvas>

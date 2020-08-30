@@ -1,4 +1,4 @@
-export * from './Common'
+export * from './Common/Button.component'
 export * from './Form/Form.component'
 export * from './Likert/Likert.component'
 export * from './MapMarker/MapMarker.component'

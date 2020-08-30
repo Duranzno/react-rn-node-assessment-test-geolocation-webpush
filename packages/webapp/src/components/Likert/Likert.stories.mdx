@@ -1,20 +1,52 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks'
 import { Likert } from './Likert.component'
+import { LikertUnit } from './LikertUnit.component'
+import { LikertRow } from './LikertRow.component'
 import { action } from '@storybook/addon-actions'
 
 <Meta title="Steps/Likert" component={Likert} />
+
+
+export const CreateTemplate = (C) => (args) => (<C {...args }/>)
+
+export const LikerTemplate = CreateTemplate(Likert)
+
+export const RowTemplate = CreateTemplate(LikertRow)
+
+export const UnitTemplate = CreateTemplate(LikertUnit)
+
 
 # Likert
 
 This is the documentation for the `Likert` used in this app, it has the params `options`, `onChange`
 
 <Canvas>
-  <Story name="Likert">
-    <Likert
-      options={['A', 'B', 'C']}
-      onClick={({ label, value }) =>
-        console.log(`Clicked on ${label} so ${value} `)
-      }
-    />
+  <Story name="Likert" args={{
+    options:['A','B','C'],
+    onClick: action("selected button to be handled by")
+    }}
+  >
+    {LikerTemplate.bind({})}
+  </Story>
+  <Story name="LikertUnit True" args={{
+      value:"Strongly Disagree", 
+      label:"Strongly Disagree", 
+      onChange:action('changed likertUnit')
+    }}>
+    {UnitTemplate.bind({})}
+  </Story>
+  <Story name="LikertUnit False" args={{
+      value:"Disagree", 
+      label:"Strongly Disagree",
+      onChange:action('changed likertUnit')
+    }}>
+    {UnitTemplate.bind({})}
+  </Story>
+   <Story name="LikertRow False" args={{
+      option:"A", 
+      value:"Strongly Disagree",
+      onChange:action('changed LikertRow')
+    }}>
+    {RowTemplate.bind({})}
   </Story>
 </Canvas>
