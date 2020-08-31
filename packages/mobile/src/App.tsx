@@ -20,12 +20,7 @@ const App: React.FC = () => {
   const channel = useChannel('sosafe-data-channel');
   useEvent<SosafeData>(channel, 'sosafe-data-event', (data): void => {
     if (data) {
-      const { filters, location, name, scores, ISOTime } = data;
-      console.log('HOOK | filters', filters);
-      console.log('HOOK | location', location);
-      console.log('HOOK | name', name);
-      console.log('HOOK | scores', scores);
-      console.log('HOOK | time', ISOTime)
+   
       addMessage(data);
     }
   });

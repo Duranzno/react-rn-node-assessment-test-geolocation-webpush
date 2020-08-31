@@ -1,11 +1,14 @@
 {
-  "extends": "../../tsconfig.json",
   "compilerOptions": {
     "module": "commonjs",
-    "esModuleInterop": true,
     "target": "es6",
     "noImplicitAny": true,
-    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "moduleResolution": "node", /* Specify module resolution strategy: 'node' (Node.js) or 'classic' (TypeScript pre-1.6). */
+    "esModuleInterop": true,
+    /* Advanced Options */
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
     "sourceMap": true,
     "outDir": "dist",
     "baseUrl": ".",
@@ -14,6 +17,12 @@
         "node_modules/*"
       ]
     },
+    "lib": [
+      "ES6"
+  ],
+  "types": [
+      "jest","node"
+  ],
     "typeRoots": [
       "node_modules/@types",
       "index.d.ts"
@@ -22,15 +31,9 @@
     "strictNullChecks": true,
     "strictFunctionTypes": true,
     // "strictBindCallApply": true,
-    "lib": [
-      "es6"
-    ]
+   
   },
-  "references": [
-    {
-      "path": "../common"
-    }
-  ],
+  
   "include": [
     "src/**/*"
   ]

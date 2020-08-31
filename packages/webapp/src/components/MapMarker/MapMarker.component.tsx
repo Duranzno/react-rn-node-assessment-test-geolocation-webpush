@@ -37,7 +37,7 @@ const MapComponent = withScriptjs(
         >
           {location && (
             <Marker
-              position={{ lat: l.latitude, longitude: l.longitude }}
+              position={{ lat: l.latitude, lng: l.longitude }}
             />
           )}
         </GoogleMap>

@@ -11,9 +11,13 @@
   },
   "license": "MIT",
   "scripts": {
-    "mobile": "yarn workspace mobile",
-    "server": "yarn workspace server",
-    "webapp": "yarn workspace webapp"
+    "mobile": "yarn workspace @sosafe-test/mobile",
+    "server": "yarn workspace @sosafe-test/server",
+    "webapp": "yarn workspace @sosafe-test/webapp",
+    "build:web":"yarn webapp build",
+    "start:web":    "concurrently 'yarn server start' 'yarn webapp start'",
+    "start:android":"concurrently 'yarn mobile start' 'yarn mobile android'",
+    "start":"concurrently 'yarn start:web' 'yarn start:android'"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^3.10.1",

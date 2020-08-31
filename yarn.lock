@@ -1396,7 +1396,7 @@
     "@emotion/utils" "0.11.3"
     "@emotion/weak-memoize" "0.2.5"
 
-"@emotion/core@^10.0.20", "@emotion/core@^10.0.35", "@emotion/core@^10.0.9":
+"@emotion/core@^10.0.20", "@emotion/core@^10.0.28", "@emotion/core@^10.0.35", "@emotion/core@^10.0.9":
   version "10.0.35"
   resolved "https://registry.yarnpkg.com/@emotion/core/-/core-10.0.35.tgz#513fcf2e22cd4dfe9d3894ed138c9d7a859af9b3"
   integrity sha512-sH++vJCdk025fBlRZSAhkRlSUoqSqgCzYf5fMOmqqi3bM6how+sQpg3hkgJonj8GxXM4WbD7dRO+4tegDB9fUw==
@@ -1553,6 +1553,18 @@
     invariant "^2.2.4"
     jest "^26.4.0"
     pusher-js "^7.0.0"
+
+"@hookform/devtools@^2.2.1":
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/@hookform/devtools/-/devtools-2.2.1.tgz#2d88414d375199e193c2611b770b194b7752a623"
+  integrity sha512-VQh4kqwUOpz9LCDzIP0aJ4qnD/ob8Gp09L8gDy++9XtL66z6g8kbCynUvBrJm4qbCNdH0M7/Spm3AUjJqUuFlA==
+  dependencies:
+    "@emotion/core" "^10.0.28"
+    "@emotion/styled" "^10.0.27"
+    "@types/lodash" "^4.14.152"
+    little-state-machine "^3.0.1"
+    lodash "^4.17.15"
+    react-simple-animate "^3.3.8"
 
 "@hookform/resolvers@^0.0.6":
   version "0.0.6"
@@ -3624,6 +3636,11 @@
   dependencies:
     "@types/geojson" "*"
 
+"@types/lodash@^4.14.152":
+  version "4.14.161"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.161.tgz#a21ca0777dabc6e4f44f3d07f37b765f54188b18"
+  integrity sha512-EP6O3Jkr7bXvZZSZYlsgt5DIjiGr0dXP1/jVEwVLTFgg0d+3lWVQkRavYVQszV7dYUwvg0B8R0MBDpcmXg7XIA==
+
 "@types/markdown-to-jsx@^6.11.0":
   version "6.11.2"
   resolved "https://registry.yarnpkg.com/@types/markdown-to-jsx/-/markdown-to-jsx-6.11.2.tgz#05d1aaffbf15be7be12c70535fa4fed65cc7c64f"
@@ -3763,6 +3780,11 @@
   dependencies:
     "@types/leaflet" "*"
     "@types/react" "*"
+
+"@types/react-native-dotenv@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@types/react-native-dotenv/-/react-native-dotenv-0.2.0.tgz#32c58422a422c1adf68acce363ed791314d5a8e7"
+  integrity sha512-ZxX+dU/yoQc0jTk+/NWttkiuXceJyN5FpOSqDl0WynN5GDzxwH7OMruQ47qcY8llo2RD3irjvzJ9BwC8gDiq0A==
 
 "@types/react-native-vector-icons@^6.4.5":
   version "6.4.5"
@@ -7923,7 +7945,7 @@ dotenv-webpack@^1.7.0:
   dependencies:
     dotenv-defaults "^1.0.2"
 
-dotenv@8.2.0, dotenv@^8.0.0:
+dotenv@8.2.0, dotenv@^8.0.0, dotenv@^8.2.0:
   version "8.2.0"
   resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-8.2.0.tgz#97e619259ada750eea3e4ea3e26bceea5424b16a"
   integrity sha512-8sJ78ElpbDJBHNeBzUbUVLsqKdccaa/BXF1uPTw3GrvQTBgrQrtObr2mUrE38vzYd8cEv+m/JBfDLioYcfXoaw==
@@ -9397,7 +9419,7 @@ format@^0.2.0:
   resolved "https://registry.yarnpkg.com/format/-/format-0.2.2.tgz#d6170107e9efdc4ed30c9dc39016df942b5cb58b"
   integrity sha1-1hcBB+nv3E7TDJ3DkBbflCtctYs=
 
-formik@^2.1.5:
+formik@2.1.5:
   version "2.1.5"
   resolved "https://registry.yarnpkg.com/formik/-/formik-2.1.5.tgz#de5bbbe35543fa6d049fe96b8ee329d6cd6892b8"
   integrity sha512-bWpo3PiqVDYslvrRjTq0Isrm0mFXHiO33D8MS6t6dWcqSFGeYF52nlpCM2xwOJ6tRVRznDkL+zz/iHPL4LDuvQ==
@@ -12517,6 +12539,11 @@ listr@^0.14.3:
     listr-verbose-renderer "^0.5.0"
     p-map "^2.0.0"
     rxjs "^6.3.3"
+
+little-state-machine@^3.0.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/little-state-machine/-/little-state-machine-3.1.1.tgz#c4076a93017d7ffe737d07c233a8164dc54ed9e6"
+  integrity sha512-+WRvpzdgNfBRo03hC74UNuMdtDEPJlpzQAQDAn10pIHoa2ksjUvvRaz+acoePHcDAjaPJ25ZdC0iNA+ECEI9XQ==
 
 load-json-file@^2.0.0:
   version "2.0.0"
@@ -16258,6 +16285,13 @@ react-native-dev-menu@^4.0.2:
   resolved "https://registry.yarnpkg.com/react-native-dev-menu/-/react-native-dev-menu-4.0.2.tgz#1e569b1fbb2740d1eab8cb3d5adfa4bf9fd89d71"
   integrity sha512-tjWAULoJgOr/WjcfhFsCYaZGtQNmApm7gD5d7G/kSAWVBdEbFFuN2MIq+CxAxBsjHSwscysD1C55TCcmXP/82w==
 
+react-native-dotenv@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/react-native-dotenv/-/react-native-dotenv-2.3.0.tgz#5c41bb06879616e9222f998446c4e401447c0638"
+  integrity sha512-I+qChtJT8U8EXSr91O1cMC7uU4Xaalg3aVFtRb1b47DX+30PMK+I8sCOMGnZcJW6YQyUaf0fjqlVXmmaMOcfWg==
+  dependencies:
+    dotenv "^8.0.0"
+
 react-native-elements@^2.0.1:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/react-native-elements/-/react-native-elements-2.3.0.tgz#1fb4d0fcbd50bb690e7c74d29211171d8b7269e5"
@@ -16540,6 +16574,11 @@ react-select@^3.0.8, react-select@^3.1.0:
     prop-types "^15.6.0"
     react-input-autosize "^2.2.2"
     react-transition-group "^4.3.0"
+
+react-simple-animate@^3.3.8:
+  version "3.3.10"
+  resolved "https://registry.yarnpkg.com/react-simple-animate/-/react-simple-animate-3.3.10.tgz#e2feee7f01afe913979063f2581eefa6a8dba617"
+  integrity sha512-iPvhRFmpQecldbE3coA3fqYGCuYaYV3K7WiUtsHa2ql+PdBUCyKXj9+6CU7k8NlFnv37X9kmXC9QAcWNUhaL8g==
 
 react-sizeme@^2.6.7:
   version "2.6.12"
@@ -19185,7 +19224,7 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-typescript@^3.3.3333, typescript@^3.7.2, typescript@^3.8.3:
+typescript@^3.3.3333, typescript@^3.8.3:
   version "3.9.7"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.9.7.tgz#98d600a5ebdc38f40cb277522f12dc800e9e25fa"
   integrity sha512-BLbiRkiBzAwsjut4x/dsibSTB6yWpwT5qWmC2OfuCg3GgVQCSgMs4vEctYPhsaGtd0AeuuHMkjZ2h2WG8MSzRw==

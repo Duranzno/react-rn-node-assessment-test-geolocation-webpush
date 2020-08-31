@@ -1,23 +1,24 @@
+/* eslint-disable @typescript-eslint/ban-types */
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import Pusher from 'pusher';
-import { pusherConfig, SosafeData } from "@sosafe-test/common";
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function trigger(
-  data: SosafeData,
+  data: object,
   channel?: string,
   event?: string,
 ): void {
   const pusher = new Pusher({
-    appId: pusherConfig.appId,
-    key: pusherConfig.key,
-    secret: pusherConfig.secret,
-    cluster: pusherConfig.cluster,
+    appId: process.env.REACT_APP_PUSHER_APP_ID!,
+    key: process.env.REACT_APP_PUSHER_KEY!,
+    secret: process.env.REACT_APP_PUSHER_SECRET!,
+    cluster: process.env.REACT_APP_PUSHER_CLUSTER!,
     useTLS: true,
     keepAlive: true,
   });
 
   pusher.trigger(
-    channel || pusherConfig.channel,
-    event || pusherConfig.event,
+    channel || "sosafe-data-channel",
+    event || "sosafe-data-event",
     data,
   );
 }

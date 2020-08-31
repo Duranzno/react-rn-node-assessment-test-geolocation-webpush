@@ -44,6 +44,8 @@ With react native, develop a mobile app with the following functions:
 
 ## Data
 
+As it is said the following file should work as the data for the filter requested in the first step of the Webapp
+
 `` `json
 // candidates.json
 
@@ -53,18 +55,19 @@ With react native, develop a mobile app with the following functions:
 `` ''
 
 ---
+# Design Choices
 
-## [Design](https://www.figma.com/file/YEpWITzMCsJLztfqCoNQOO/sosafe-assesment-test?node-id=2%3A9128)
+- [Figma Project](https://www.figma.com/file/YEpWITzMCsJLztfqCoNQOO/sosafe-assesment-test?node-id=2%3A9128)
 
 - Font: Raleway
 - Colors:
-  - main:#f54286
-  - fuchsia:#f54286
-  - secondary:#fbe7ee
-  - pink:#fbe7ee
-  - red:#f95b5d
-  - blue:#4571c3
-  - green:#a6e074
-  - grey:#7e9db1
-  - black:#000a17
-  - white: #f8f8ff
+  - main: #f54286
+  - fuchsia: #f54286
+  - secondary: #fbe7ee
+  - pink: #fbe7ee
+  - red: #f95b5d
+  - blue: #4571c3
+  - green: #a6e074
+  - grey: #7e9db1
+  - black: #000a17
+  - white:  #f8f8ff
