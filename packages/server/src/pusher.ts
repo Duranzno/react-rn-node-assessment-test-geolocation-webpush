@@ -15,7 +15,6 @@ export function trigger(
     keepAlive: true,
   });
 
-  console.log(pusher);
   pusher.trigger(
     channel || pusherConfig.channel,
     event || pusherConfig.event,

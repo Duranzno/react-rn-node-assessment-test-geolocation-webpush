@@ -1,6 +1,5 @@
 import { SosafeData } from "@sosafe-test/common"
 // import Pusher from 'pusher-js'
-import axios, { AxiosResponse } from 'axios'
 // const pusherConfig = {
 //   app_id: process.env.REACT_APP_PUSHER_APP_ID,
 //   key: process.env.REACT_APP_PUSHER_KEY,
@@ -21,5 +20,17 @@ import axios, { AxiosResponse } from 'axios'
 //   channel.trigger(pusherConfig.event, { data })
 // })
 // }
-export const submitFormData = async (data: SosafeData): Promise<AxiosResponse> =>
-  await axios.post(`${process.env.REACT_APP_SERVER_API}/upload`, data)
+export const submitFormData = async (data: SosafeData): Promise<Response> => {
+  try {
+    const response = await fetch("http://localhost:5000/upload", {
+      "method": "POST",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "body": JSON.stringify(data)
+    })
+    return response
+  } catch (error) {
+    return error
+  }
+}
