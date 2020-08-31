@@ -1,23 +1,29 @@
-import React from 'react'
+import React from 'react';
 // import cx from 'classnames'
-import { LikertRow } from "./LikertRow.component"
+import { LikertRow } from './LikertRow.component';
+import { Score } from '@sosafe-test/common';
+export type LikertDatapoint = {
+  question: string;
+  answer: string;
+};
+
 interface Props {
-  options: string[];
-  onClick: Function;
+  options: Score[];
+  onClick: (data: LikertDatapoint) => void;
 }
 export const Likert: React.SFC<Props> = ({ onClick, options }) => {
   return (
     <div>
-      {options.map((option,index) => (
+      {options.map((o, index) => (
         <LikertRow
-          key={option}
-          option={`${index+1}. ${option}`}
-          onChange={(label: string): void => {
-            onClick(label, option)
+          key={o.question}
+          label={`${index + 1}. ${o.question}`}
+          onChange={(answer: string): void => {
+            onClick({ answer, question: o.question });
           }}
-          value=" "
+          value={o.answer}
         />
       ))}
     </div>
-  )
-}
+  );
+};

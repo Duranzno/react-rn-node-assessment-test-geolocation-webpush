@@ -21,7 +21,7 @@
     "axios": "^0.20.0",
     "classnames": "^2.2.6",
     "eslint-plugin-react": "^7.20.0",
-    "formik": "^2.1.5",
+    "formik": "2.1.5",
     "google-map-react": "^2.0.8",
     "googlemaps": "^1.12.0",
     "husky": "^4.2.5",
@@ -50,6 +50,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.11.4",
+    "@hookform/devtools": "^2.2.1",
     "@storybook/addon-actions": "^6.0.20",
     "@storybook/addon-essentials": "^6.0.20",
     "@storybook/addon-links": "^6.0.20",
@@ -70,7 +71,7 @@
   },
   "scripts": {
     "start": "yarn watch:css && react-scripts start",
-    "build": "yarn build:css && &react-scripts build",
+    "build": "yarn build:css && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "build:css": "postcss src/styles/tailwind.css -o src/styles/main.css",

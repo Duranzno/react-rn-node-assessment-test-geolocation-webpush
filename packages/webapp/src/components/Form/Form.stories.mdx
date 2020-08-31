@@ -1,0 +1,24 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks'
+import { Form } from './Form.component'
+import { action } from '@storybook/addon-actions'
+
+<Meta title="Form" component={Form} />
+
+# Form
+
+This is the documentation for the `Select` used in this app, it has the params `options`, `onChange`
+
+export const Template = (args) => (
+  <Form  {...args }/>
+)
+
+<Canvas>
+  <Story 
+    name="Form" 
+    args={{
+        candidates:["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"], 
+        onSubmit: action("This will be sent to Pusher")
+        }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>

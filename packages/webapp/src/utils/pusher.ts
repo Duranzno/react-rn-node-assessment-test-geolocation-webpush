@@ -1,4 +1,4 @@
-import { SosafeData } from "@sosafe-test/common"
+import { SosafeData } from '@sosafe-test/common';
 // import Pusher from 'pusher-js'
 // const pusherConfig = {
 //   app_id: process.env.REACT_APP_PUSHER_APP_ID,
@@ -20,17 +20,19 @@ import { SosafeData } from "@sosafe-test/common"
 //   channel.trigger(pusherConfig.event, { data })
 // })
 // }
-export const submitFormData = async (data: SosafeData): Promise<Response> => {
+export const submitFormData = async (
+  data: SosafeData,
+): Promise<Response> => {
   try {
-    const response = await fetch("http://localhost:5000/upload", {
-      "method": "POST",
-      "headers": {
-        "content-type": "application/json"
+    const response = await fetch('http://localhost:5000/upload', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
       },
-      "body": JSON.stringify(data)
-    })
-    return response
+      body: JSON.stringify(data),
+    });
+    return response;
   } catch (error) {
-    return error
+    return error;
   }
-}
+};
