@@ -1,3 +1,6 @@
+/* eslint-disable eslint-comments/no-unlimited-disable */
+/* eslint-disable  */
+//@ts-nocheck
 import 'react-native-gesture-handler';
 import React, { useEffect } from 'react';
 import { StatusBar } from 'react-native';
@@ -10,13 +13,19 @@ import {
 import SplashScreen from 'react-native-splash-screen';
 import { RootProvider } from 'providers/Root.provider';
 import { useAppContext } from 'providers';
-import { SosafeData } from '@sosafe-test/common';
+import { SosafeData } from 'common';
 
 const App: React.FC = () => {
   const { addMessage } = useAppContext();
   const channel = useChannel('sosafe-data-channel');
   useEvent<SosafeData>(channel, 'sosafe-data-event', (data): void => {
     if (data) {
+      const { filters, location, name, scores, ISOTime } = data;
+      console.log('HOOK | filters', filters);
+      console.log('HOOK | location', location);
+      console.log('HOOK | name', name);
+      console.log('HOOK | scores', scores);
+      console.log('HOOK | time', ISOTime)
       addMessage(data);
     }
   });
@@ -38,7 +47,7 @@ function ProviderWrapper(): React.ReactElement {
     <RootProvider>
       <App />
     </RootProvider>
-  );
+  );r
 }
 
 export default ProviderWrapper;

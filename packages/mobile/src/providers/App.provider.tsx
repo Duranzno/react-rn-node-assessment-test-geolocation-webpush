@@ -1,6 +1,6 @@
 import React, { useReducer } from 'react';
 
-import { SosafeData } from '../screens/AppStackParamList.model';
+import { SosafeData } from 'common';
 import createCtx from '../utils/createCtx';
 
 interface Context {

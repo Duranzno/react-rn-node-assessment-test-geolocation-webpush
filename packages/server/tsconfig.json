@@ -26,6 +26,11 @@
       "es6"
     ]
   },
+  "references": [
+    {
+      "path": "../common"
+    }
+  ],
   "include": [
     "src/**/*"
   ]

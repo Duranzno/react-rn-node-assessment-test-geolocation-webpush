@@ -7,9 +7,9 @@ export type Point = {
   y: number;
 };
 export type Score = {
-  question:string,
-  answer:string,
-}
+  question: string;
+  answer: string;
+};
 export interface SosafeData {
   name: string;
   filters: string[];
@@ -26,13 +26,4 @@ export const SosafeDataTemplate: SosafeData = {
     latitude: -33.4489,
     longitude: -70.6693,
   },
-};
-
-export const pusherConfig = {
-  appId: '1063660',
-  key: '605ff04b821c4a21d109',
-  secret: '574d241f013461101120',
-  cluster: 'us2',
-  channel: 'sosafe-data-channel',
-  event: 'sosafe-data-event',
 };

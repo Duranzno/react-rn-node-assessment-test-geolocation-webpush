@@ -1,4 +1,4 @@
-import { SosafeData } from '@sosafe-test/common';
+import { SosafeData } from 'common';
 
 export type AppStackParamList = {
   List: SosafeData[];

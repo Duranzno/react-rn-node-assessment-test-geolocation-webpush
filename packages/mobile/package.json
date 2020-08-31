@@ -8,11 +8,11 @@
     "start": "react-native start",
     "test": "jest __tests__",
     "clean": "react-native-clean-project",
-    "lint": "eslint './src/**/*.ts'",
-    "lint:fix": "eslint --fix './src/**/*.ts'",
+    "lint": "eslint 'src/**/*.{ts,tsx}'  --fix",
     "postinstall": "patch-package",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "reset":"watchman watch-del-all && rm -rf node_modules ../../node_modules && yarn && yarn start --reset-cache"
   },
   "dependencies": {
     "@harelpls/use-pusher": "^7.0.0",
@@ -20,7 +20,6 @@
     "@react-native-community/netinfo": "^5.9.6",
     "@react-navigation/native": "^5.5.0",
     "@react-navigation/stack": "^5.4.1",
-    "@sosafe-test/common": "^1.0.4",
     "@storybook/react-native": "^5.3.21",
     "detox": "^16.7.1",
     "patch-package": "^6.2.2",
@@ -58,7 +57,7 @@
     "babel-jest": "^24.9.0",
     "babel-loader": "^8.1.0",
     "babel-plugin-module-resolver": "^4.0.0",
-    "eslint": "^6.5.1",
+    "eslint": "6.6.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "24.9.0",
     "jest-transform-stub": "^2.0.0",

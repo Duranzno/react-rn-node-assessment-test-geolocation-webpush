@@ -1,3 +1,3 @@
 describe('Default Test Suite', () => {
-  test.skip('should test something ')
+  test.skip('should test something ',():void=>{})
 })

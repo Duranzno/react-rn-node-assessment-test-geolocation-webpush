@@ -13,8 +13,10 @@ type Props = {
 
 const MapComponent =withScriptjs(withGoogleMap(({onClick}: Props)=>{
   const [marker, setMarker] = useState<LatLng>()
-  //@ts-ignore
-  const onMapClick=(e)=>{
+  // this is used as any as nor the library nor the underlying google maps gives out the correct data
+  // TODO: implement correct typing or use another library
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const onMapClick = (e: any):void=>{
     setMarker(e.latLng)
     onClick(e.latLng.toJSON())
   }

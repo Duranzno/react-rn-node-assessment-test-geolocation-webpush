@@ -11,8 +11,8 @@ const Root: React.FC = () => {
   );
 
   useEffect(() => {
-    console.log(__DEV__);
     if (__DEV__) {
+      console.log('Will add Storybook to the debug menu');
       // eslint-disable-next-line @typescript-eslint/no-var-requires
       const DevMenu = require('react-native-dev-menu');
       DevMenu.addItem('Toggle Storybook', toggleStorybook);

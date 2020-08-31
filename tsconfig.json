@@ -7,11 +7,23 @@
         "types": [
             "jest","node"
         ],
+        "resolveJsonModule": true,
         "strict": true,
         "moduleResolution": "node", /* Specify module resolution strategy: 'node' (Node.js) or 'classic' (TypeScript pre-1.6). */
         "esModuleInterop": true,
         /* Advanced Options */
         "forceConsistentCasingInFileNames": true,
-        "skipLibCheck": true
+        "skipLibCheck": true,
+    },
+    "rules":{
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/ban-types": [
+            "off",
+            {
+                "types":{
+                    "Function":""
+                }
+            }
+        ]
     }
 }

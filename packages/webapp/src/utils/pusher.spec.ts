@@ -1,10 +1,10 @@
-import { submitToChannel } from './pusher'
+import { submitFormData } from './pusher'
 
 describe('Testing Pusher Client Event Functionality', () => {
   test('should push data to client and check on dashboard manually', async () => {
-    submitToChannel({
+    submitFormData({
       filters: [],
-      location: { data: 'empty' },
+      location: { latitude:1,longitude:1 },
       name: 'name',
       scores: [],
     })

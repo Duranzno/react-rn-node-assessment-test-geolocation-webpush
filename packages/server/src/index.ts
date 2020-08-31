@@ -13,6 +13,7 @@ app.set('PORT', process.env.PORT || 5000);
 
 app.post('/upload', (req, res): void => {
   const payload = req.body;
+  console.log("Will send to Pusher",payload)
   trigger(payload);
   res.send(payload);
 });

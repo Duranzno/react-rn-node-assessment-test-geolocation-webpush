@@ -11,7 +11,7 @@
     "build": "tsc",
     "fn":"ts-node src/fn.ts",
     "build:watch": "tsc -w",
-    "lint": "eslint './src/**/*.ts --fix'",
+    "lint": "eslint 'src/**/*.{js,ts,tsx}'  --fix",
     "start:prod": "nodemon src/index.ts"
   },
   "keywords": [],
